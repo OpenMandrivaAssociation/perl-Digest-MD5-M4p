@@ -1,15 +1,18 @@
-%define realname Digest-MD5-M4p
+%define upstream_name    Digest-MD5-M4p
+%define upstream_version 0.01
 
-Summary: Perl interface to a variant of the MD5 algorithm
-Name: perl-Digest-MD5-M4p
-Version: 0.01
-Release: %mkrel 3
-License: Artistic
-Group: Development/Perl
-URL: http://search.cpan.org/dist/Digest-MD5-M4p/
-Source: http://www.cpan.org/modules/by-module/Digest/Digest-MD5-M4p-%{version}.tar.bz2
-#BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Perl interface to a variant of the MD5 algorithm
+License:    Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}/
+Source0:    http://www.cpan.org/modules/by-module/Digest/Digest-MD5-M4p-%{upstream_version}.tar.bz2
+
 BuildRequires: perl-devel
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 he Digest::MD5 module is cloned from the Digest::MD5 module to support a
@@ -18,7 +21,7 @@ why this is so, don't bother with this module! It is incompatible with RSA
 and RFC standards!
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
