@@ -8,7 +8,7 @@ Release:	6
 Summary:    Perl interface to a variant of the MD5 algorithm
 License:    Artistic
 Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}/
+Url:        https://search.cpan.org/dist/%{upstream_name}/
 Source0:    http://www.cpan.org/modules/by-module/Digest/Digest-MD5-M4p-%{upstream_version}.tar.bz2
 
 BuildRequires: perl-devel
