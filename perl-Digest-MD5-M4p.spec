@@ -1,15 +1,13 @@
 %define upstream_name    Digest-MD5-M4p
-%define upstream_version 0.01
-
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	6
+Version:    0.01
+Release:	7
 
 Summary:    Perl interface to a variant of the MD5 algorithm
 License:    Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}/
-Source0:    http://www.cpan.org/modules/by-module/Digest/Digest-MD5-M4p-%{upstream_version}.tar.bz2
+Url:        https://metacpan.org/dist/%{upstream_name}/
+Source0:    http://www.cpan.org/modules/by-module/Digest/Digest-MD5-M4p-%{version}.tar.bz2
 
 BuildRequires: perl-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
@@ -21,7 +19,7 @@ why this is so, don't bother with this module! It is incompatible with RSA
 and RFC standards!
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -60,9 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.10.0-1mdv2010.0
 + Revision: 403151
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-3mdv2009.0
+- rebuild using %0.01 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-3mdv2009.0
 + Revision: 256685
 - rebuild
 
